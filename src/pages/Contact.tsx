@@ -265,6 +265,9 @@ export const Contact = () => {
                       )}
                     </div>
 
+                    {/* Botcheck Field (Hidden) */}
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} onChange={() => {}} />
+
                     {/* Submit Button */}
                     <button
                       type="submit"
