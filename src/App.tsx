@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-bg-page text-neutral-200 font-sans">
+      <div className="min-h-[100svh] bg-bg-page text-neutral-200 font-sans">
         <Navbar />
         <main className="pt-16">
           <Routes>

@@ -338,7 +338,7 @@ export const Skills = () => {
                     value={currentInput}
                     onChange={(e) => setCurrentInput(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono"
+                    className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono text-base md:text-sm"
                     placeholder={isProcessing ? "processing..." : "enter command..."}
                     disabled={isProcessing}
                   />

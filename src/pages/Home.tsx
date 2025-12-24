@@ -16,7 +16,7 @@ export const Home = () => {
   const featuredSkills = SKILLS.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-bg-page relative overflow-hidden">
+    <div className="min-h-[100svh] bg-bg-page relative overflow-hidden">
       {/* 3D Grid Background */}
       <Grid3DBackground />
       
