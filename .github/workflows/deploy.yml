@@ -42,6 +42,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VITE_WEB3FORMS_ACCESS_KEY=${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
       
       - name: Trigger Dokploy Redeploy
         run: curl -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
