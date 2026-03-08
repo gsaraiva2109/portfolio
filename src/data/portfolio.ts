@@ -63,7 +63,7 @@ export const CONTACT = {
   email: 'gsaraiva2109@gmail.com',
   social: {
     github: 'https://github.com/gsaraiva2109',
-    linkedin: 'https://linkedin.com/in/gabriel-saraiva-4a0009268',
+    linkedin: 'https://www.linkedin.com/in/gsaraiva2109/',
   }
 };
 

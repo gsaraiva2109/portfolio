@@ -37,7 +37,6 @@ Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced 
 ### **Visual & UI**
 
 - **Lucide React** for consistent iconography
-- **Three.js** for 3D background effects
 - **Custom Terminal Components** for authentic cyber aesthetic
 - **Responsive Grid Systems** for mobile-first design
 

@@ -71,7 +71,6 @@ export const Footer = () => {
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">React</span>
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">TypeScript</span>
               <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">Tailwind</span>
-              <span className="px-2 py-1 bg-neutral-800 rounded text-primary-500">Three.js</span>
             </div>
           </div>
         </div>
