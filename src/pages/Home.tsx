@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, Code2 } from 'lucide-react';
+import { ExternalLink, Github, Code2, Linkedin } from 'lucide-react';
 import { Grid3DBackground } from '../components/Grid3D';
 import { Typewriter } from '../components/Typewriter';
-import { HERO_CONTENT, SKILLS } from '../data/portfolio';
+import { HERO_CONTENT, SKILLS, CONTACT } from '../data/portfolio';
 
 export const Home = () => {
   const stats = [
     { label: 'Years Experience', value: '1+' },
-    { label: 'Platforms', value: '3' },
-    { label: 'Services', value: '20+' },
-    { label: 'Tools', value: '15+' },
+    { label: 'Cloud Providers', value: '2' },
+    { label: 'Homelab Services', value: '25+' },
+    { label: 'Tools & Frameworks', value: '15+' },
   ];
 
   const featuredSkills = SKILLS.slice(0, 6);
@@ -37,7 +37,7 @@ export const Home = () => {
 
             {/* Typewriter heading */}
             <div className="font-mono text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-primary-500">
-              <Typewriter text="Infrastructure & DevOps Architect" delay={80} />
+              <Typewriter text="Backend Dev & Infrastructure Engineer" delay={80} />
               <span className="terminal-cursor ml-2" />
             </div>
 
@@ -186,11 +186,10 @@ export const Home = () => {
             className="bg-bg-elevated border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Ready to Deploy Your Vision?
+              Let&#39;s Connect
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Let&apos;s build something amazing together. From infrastructure automation to full-stack development, 
-              I&apos;m here to turn your ideas into production reality.
+              I am always open to discussing backend architectures, platform engineering paradigms, or automation challenges. Whether you want to talk about system resilience, share insights on homelab infrastructures, or discuss technical engineering communities, feel free to reach out.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -200,13 +199,22 @@ export const Home = () => {
                 Start a Project
               </Link>
               <a
-                href="https://github.com/gsaraiva2109"
+                href={CONTACT.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"
               >
                 <Github className="mr-2 h-5 w-5" />
-                View Code
+                View Github
+              </a>
+              <a
+                href={CONTACT.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold rounded-lg transition-all duration-200"
+              >
+                <Linkedin className="mr-2 h-5 w-5" />
+                Connect on LinkedIn
               </a>
             </div>
           </motion.div>

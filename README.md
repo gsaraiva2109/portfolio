@@ -2,13 +2,13 @@
 
 Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced cyber terminal aesthetic, built for high-performance homelab deployment.
 
-## 🌟 Live Demo
+## Live Demo
 
 **[View Live Website →](https://gsaraiva.com.br)**
 
-## ✨ Features
+## Features
 
-### 🎯 **Core Portfolio**
+### **Core Portfolio**
 
 - **Cyber Terminal Design**: Electric neon green theme with monospace fonts
 - **Advanced Animations**: Typewriter effects, glitch transitions, 3D grid background
@@ -16,7 +16,7 @@ Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced 
 - **Interactive Elements**: Terminal commands, skill explorer, project filtering
 - **Professional Content**: Complete showcase of DevOps and cloud engineering skills
 
-### 🎨 **Visual Components**
+### **Visual Components**
 
 - **Animated Background**: Dynamic 3D grid with terminal styling
 - **Progress Indicators**: Visual skill and technology proficiency displays
@@ -24,7 +24,7 @@ Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced 
 - **Terminal Commands**: Authentic command-line interface elements
 - **Real-time Statistics**: Dynamic counters and engagement metrics
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### **Frontend**
 
@@ -46,7 +46,7 @@ Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced 
 - **Nginx** for high-performance static serving
 - **Dokploy** for self-hosted PaaS deployment
 
-## 📦 Local Development
+## Local Development
 
 ```bash
 # Clone the repository
@@ -66,7 +66,7 @@ npm run build
 npm run preview
 ```
 
-## 🚀 Deployment (Dokploy / Homelab)
+## Deployment (Dokploy / Homelab)
 
 This project includes a production-ready `Dockerfile` optimized for Nginx.
 
@@ -91,7 +91,7 @@ docker build -t portfolio .
 docker run -d -p 80:80 --name portfolio portfolio
 ```
 
-## 🎨 Customization Guide
+## Customization Guide
 
 ### **Personal Information**
 
@@ -106,7 +106,7 @@ Update content in component files:
 1. **Skills**: Modify technology lists and proficiency levels in `src/data/portfolio.ts`
 2. **Contact Info**: Update social links and contact details in `src/data/portfolio.ts`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -128,7 +128,7 @@ portfolio/
 └── vite.config.ts                      # Vite configuration
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -136,15 +136,15 @@ portfolio/
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 MIT License - feel free to use this template for your own portfolio!
 
-## 👨‍💻 About
+## About
 
 This portfolio showcases DevOps and Cloud Engineering expertise with modern web technologies. Built with a focus on performance, accessibility, and user experience.
 
-## 🔗 Links
+## Links
 
 - **Live Website**: [https://gsaraiva.com.br](https://gsaraiva.com.br)
 - **GitHub Repository**: [https://github.com/gsaraiva2109/portfolio](https://github.com/gsaraiva2109/portfolio)

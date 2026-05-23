@@ -333,8 +333,8 @@ export const Contact = () => {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse" />
-                    <span className="font-mono text-sm text-neutral-200">Available for new projects</span>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" />
+                    <span className="font-mono text-sm text-neutral-200">Focused on VDOC</span>
                   </div>
                   <div className="text-sm text-neutral-400">
                     <div className="mb-2">Response time: Within 24 hours</div>
@@ -385,9 +385,9 @@ export const Contact = () => {
               $ echo &quot;Thank you for visiting!&quot;
             </div>
             <div className="space-y-2 text-neutral-200">
-              <p>I&apos;m always interested in discussing new opportunities and challenging projects.</p>
+              <p>I&#39;m always down to talk about backend architecture, platform engineering, and homelab setups.</p>
               <p className="text-primary-500">
-                Let&apos;s build something amazing together.
+                Let&apos;s connect.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-neutral-700 text-sm text-neutral-400">

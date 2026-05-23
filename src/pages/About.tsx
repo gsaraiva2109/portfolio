@@ -1,23 +1,32 @@
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { Typewriter } from '../components/Typewriter';
-import { Calendar, MapPin, Code, Zap } from 'lucide-react';
+import { Calendar, MapPin, Code, Zap, Briefcase, Server } from 'lucide-react';
+import { SKILLS, PROJECTS } from '../data/portfolio';
 
 export const About = () => {
   const timeline = [
     {
-      year: '2024 - Present',
-      title: 'Infrastructure & DevOps Enthusiast',
-      company: 'Continuous Learning (Homelab)',
+      year: '2026 - Present',
+      title: 'Software Engineering Intern',
+      company: 'Serasa Experian — VDOC Team',
       description:
-        'Simulating enterprise environments to master Kubernetes, CI/CD, and Network Security. Architecting a hyperconverged node (K6) to run microservices and test Zero-Trust principles.',
-      icon: Code,},
+        'Building and maintaining Java/Spring Boot microservices for identity verification and digital trust platforms. Working with containerized deployments, CI/CD pipelines, and REST APIs in a high-availability enterprise environment.',
+      icon: Briefcase,
+    },
     {
       year: '2024 - Present',
-      title: 'Computer Science Graduate',
-      company: 'University of Fortaleza - Unifor',
-      description: 'Bachelor\'s degree with focus on networking and cloud computing.',
+      title: 'Computer Science Student',
+      company: 'University of Fortaleza — Unifor',
+      description: 'Bachelor\'s degree in Computer Science with coursework in networking, distributed systems, and cloud computing.',
       icon: Calendar,
+    },
+    {
+      year: '2025 - Present',
+      title: 'Homelab & Infrastructure Practice',
+      company: 'Self-Directed Learning',
+      description: 'Running a Proxmox VE hypervisor with Kubernetes, OPNsense firewall, VLAN segmentation, and Cloudflare Zero Trust tunnels. Managing infrastructure as code with Ansible and Terraform.',
+      icon: Server,
     },
   ];
 
@@ -67,28 +76,18 @@ export const About = () => {
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Gabriel Saraiva, and I bridge the gap between code and infrastructure."
+                    text="Hello, I'm Gabriel Saraiva. I write Java/Spring Boot microservices at Serasa Experian by day, and run Kubernetes clusters on bare metal by night."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
                   <p>
-                    I design, automate, and deploy the systems that keep applications running. My journey began in Computer Science with a focus on logic and backend development, but quickly evolved into a passion for <b>DevOps and Infrastructure</b>.
+                    I&apos;m a Software Engineering Intern on the VDOC team, building backend services that handle identity verification at enterprise scale. Writing code that runs reliably is what drives me, and that means understanding the infrastructure underneath.
                   </p>
                   <p>
-                    I realized that writing code is only half the battle; running it reliably is the other half. Today, I focus on crafting scalable infrastructure, robust CI/CD pipelines, and Python-based automation.
+                    When I&apos;m not at work, I&apos;m in my homelab: a Proxmox VE node running ZFS-backed VMs, a Kubernetes cluster behind OPNsense, and Cloudflare Zero Trust tunnels connecting everything securely. I automate deployments with Ansible, script system tasks in Bash and Python, and break things on purpose so I learn how to fix them.
                   </p>
                   <p>
-                    I use my production-grade Homelab (Proxmox/Kubernetes) as a training ground to master enterprise technologies. This allows me to break things safely at home so I can build them securely for clients.
-                  </p>
-                  <p>
-                    I am technically versatile: I run <b>Arch Linux</b> on my daily driver for efficiency, but I manage <b>Debian/Alpine</b> servers for stability.
-                  </p>
-                  <p>
-                    I believe in using the right tool for the job. Whether it&apos;s a Cloud-Native architecture on AWS or a self-hosted solution on bare metal, my goal is the same: <b>Reliability, Security, and Efficiency</b>.
-                  </p>
-                  <p className="text-primary-500 font-medium">
-                    For me, DevOps isn&apos;t just about speed—it&apos;s about precision, repeatability, 
-                    and creating systems that empower developers to ship confidently and innovate faster.
+                    I run Arch Linux on my laptop and Debian on my servers. I believe every developer should know how their code reaches production, not just how to write it.
                   </p>
                 </div>
               </div>
@@ -113,15 +112,15 @@ export const About = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Cloud Platforms</span>
-                    <span className="text-primary-500 font-mono">AWS, Azure</span>
+                    <span className="text-primary-500 font-mono">AWS, OCI</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Projects</span>
-                    <span className="text-primary-500 font-mono">4+ Major Projects</span>
+                    <span className="text-primary-500 font-mono">{PROJECTS.length}+ Projects</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Technologies</span>
-                    <span className="text-primary-500 font-mono">19+ Mastered</span>
+                    <span className="text-primary-500 font-mono">{SKILLS.length}+ Working Knowledge</span>
                   </div>
                 </div>
               </div>
@@ -131,7 +130,7 @@ export const About = () => {
                   Specializations
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Cloud Architecture', 'CI/CD Pipelines', 'Infrastructure as Code', 'Container Orchestration', 'Microservices'].map((skill) => (
+                  {['Backend Development', 'Platform Engineering', 'CI/CD Pipelines', 'Infrastructure as Code', 'Container Orchestration'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 bg-neutral-800 text-neutral-200 text-sm rounded-md border border-neutral-700 hover:border-primary-500/50 transition-colors"

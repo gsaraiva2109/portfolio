@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { ExternalLink, Github, Filter } from 'lucide-react';
-import { PROJECTS_BY_CATEGORY } from '../data/portfolio';
+import { Dialog, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription } from '../components/ui/dialog';
+import { PROJECTS_BY_CATEGORY, CONTACT } from '../data/portfolio';
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS_BY_CATEGORY.all[0] | null>(null);
 
   const filters = [
     { id: 'all', label: 'All Projects', count: PROJECTS_BY_CATEGORY.all.length },
@@ -18,6 +20,7 @@ export const Projects = () => {
   };
 
   return (
+    <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
     <div className="min-h-screen bg-bg-page">
       {/* Terminal Header */}
       <TerminalHeader
@@ -71,7 +74,8 @@ export const Projects = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden group hover:border-primary-500/50 transition-all duration-300 shadow-card hover:shadow-card-hover"
+                onClick={() => setSelectedProject(project)}
+                className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden group hover:border-primary-500/50 transition-all duration-300 shadow-card hover:shadow-card-hover cursor-pointer"
               >
                 {/* Project Image */}
                 <div className="relative aspect-video overflow-hidden">
@@ -81,11 +85,11 @@ export const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-60" />
-                  
+
                   {/* Project Type Badge */}
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
-                      project.category === 'devops' 
+                      project.category === 'devops'
                         ? 'bg-green-500/20 text-green-500 border border-green-500/30'
                         : 'bg-blue-500/20 text-blue-500 border border-blue-500/30'
                     }`}>
@@ -205,7 +209,7 @@ export const Projects = () => {
               <div className="pt-4 border-t border-neutral-700 text-sm text-neutral-400">
                 <div className="flex items-center space-x-2">
                   <span className="text-accent-500">$</span>
-                  <span>echo &quot;Each project demonstrates real-world implementation of cloud-native architecture and modern development practices&quot;</span>
+                  <span>echo &quot;Each project solves a real problem — built, deployed, and maintained end-to-end.&quot;</span>
                 </div>
               </div>
             </div>
@@ -224,15 +228,16 @@ export const Projects = () => {
             className="bg-gradient-to-br from-bg-elevated to-bg-surface border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Interested in Collaboration?
+              See Something You Like?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              These projects showcase my expertise in DevOps and full-stack development. 
-              Let&apos;s discuss how we can work together on your next project.
+              These projects represent my work across backend development and infrastructure
+              automation. If your team is looking for someone who understands both application
+              code and the systems it runs on, reach out.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/gsaraiva2109"
+                href={CONTACT.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
@@ -252,5 +257,70 @@ export const Projects = () => {
         </div>
       </section>
     </div>
+      {selectedProject && (
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{selectedProject.title}</DialogTitle>
+          </DialogHeader>
+
+          <div className="overflow-y-auto px-6 py-4 space-y-4">
+            {selectedProject.image && (
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full aspect-video object-cover rounded-lg border border-neutral-700"
+              />
+            )}
+            <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
+              selectedProject.category === 'devops'
+                ? 'bg-green-500/20 text-green-500 border border-green-500/30'
+                : 'bg-blue-500/20 text-blue-500 border border-blue-500/30'
+            }`}>
+              {selectedProject.category === 'devops' ? 'DevOps' : 'Full-Stack'}
+            </span>
+            <DialogDescription>{selectedProject.description}</DialogDescription>
+            <div className="flex flex-wrap gap-2">
+              {selectedProject.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-1 bg-neutral-800 text-neutral-300 text-xs rounded border border-neutral-700"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <DialogFooter>
+            <a
+              href={selectedProject.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary-500 text-bg-surface font-mono font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              View Code
+            </a>
+            {selectedProject.websiteLink && (
+              <a
+                href={selectedProject.websiteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-mono font-semibold rounded-lg transition-all duration-200"
+              >
+                <ExternalLink className="mr-2 h-5 w-5" />
+                Live Demo
+              </a>
+            )}
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="inline-flex items-center justify-center px-6 py-3 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-mono font-semibold rounded-lg transition-all duration-200"
+            >
+              Close
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      )}
+    </Dialog>
   );
 };
